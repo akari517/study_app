@@ -88,26 +88,32 @@ class _FirstPage extends State<FirstPage> {
           backgroundColor: AppColor.ui.lightBlue, //Colors.はいらないらしい
         ),
         body: GridView.builder(
-          itemCount: strList.length,
+          itemCount: strList.length, //strlistの数を数を数えてくれてる
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               child: Column(
                 children: [
-                  Container(
-                    color: Colors.blue,
-                    child: Center(child: Text(strList[index])),
+                  AspectRatio(
+                    aspectRatio: 3 / 4,
+                    child: Container(
+                      color: Colors.blue,
+                      child: Center(child: Text(strList[index])),
+                    ),
                   ),
-                  Container(child: Text(strList[index])),
+                  Text(
+                    strList[index],
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               ),
             );
           },
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisExtent: 170, //アイテムの縦幅
             crossAxisCount: 3, //列の数を指定
-            mainAxisSpacing: 30,
+            mainAxisSpacing: 10,
             crossAxisSpacing: 5, //グリッド間のスペースのサイズを指定
-            childAspectRatio: 0.9, //高さを指定
           ),
         ));
   }
