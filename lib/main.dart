@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:study_app/color/color.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,7 +60,11 @@ class _FirstPage extends State<FirstPage> {
     'テスト7',
     'テスト8',
     'テスト9',
-    'テスト10'
+    'テスト10',
+    'テスト14',
+    '14',
+    '14',
+    '14',
   ];
 
   @override
@@ -98,7 +104,7 @@ class _FirstPage extends State<FirstPage> {
                     aspectRatio: 3 / 4,
                     child: Container(
                       color: Colors.blue,
-                      child: Center(child: Text(strList[index])),
+                      //child: Center(child: Text(strList[index])),
                     ),
                   ),
                   Text(
